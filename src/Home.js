@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Header from './Header';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -22,8 +21,7 @@ const Home = () => {
         setBusqueda(document.getElementById("search").value);
     }
     return(
-        <div>
-        <Header libros={listaLibros}/>
+        <div className="altura">
         <div className="container home altura">
         <input className="header__buscador" type="search" placeholder="Buscar..." id="search" onKeyUp={buscador} />
             <div className="libros-container">

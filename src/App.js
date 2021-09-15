@@ -1,5 +1,7 @@
 import './App.scss';
 import Home from './Home';
+import Footer from './Footer';
+import Header from './Header';
 import Single from './Single';
 import Books from './Books';
 import Category from './Category';
@@ -23,6 +25,7 @@ const App = () => {
 
   return (
     <div>
+      <Header libros={listaLibros}/>
       <Switch>
         <Route exact path="/"><Home /></Route>
         <Route path="/libro/:titulo" ><Single libros={listaLibros}/></Route>
@@ -33,6 +36,7 @@ const App = () => {
         <Route path={`/autores`}><Category libros={listaLibros} categoria="autor"/></Route>
         <Route path={`/años`}><Category libros={listaLibros} categoria="año"/></Route>
       </Switch>
+      <Footer/>
     </div>
   );
 }

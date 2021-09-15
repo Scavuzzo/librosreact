@@ -1,4 +1,3 @@
-import Header from './Header';
 import { useParams, Link, useHistory } from 'react-router-dom';
 
 
@@ -8,9 +7,7 @@ const Single = (props) => {
     const history = useHistory();
 
     return (
-        
-        <div>
-            <Header libros={libros}/>
+        <div className="">
             <div className="single">
                 <div className="single__container">
                     {libros.filter(libro => libro.titulo.toLowerCase() === params.titulo.toLowerCase()).map((libro, i) => 

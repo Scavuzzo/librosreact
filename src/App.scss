@@ -103,8 +103,9 @@ body {
 
 // GLOBALES
 .altura {
+  min-height: calc(100vh - 250px);
   @include breakpoint(phone) {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
   }
 }
 .capitalize {
@@ -213,6 +214,7 @@ body {
   }
   ul li {
       margin-bottom: 10px;
+      max-width: 660px;
       height: 100px;
       display: flex;
       transition: all .3s;
@@ -242,8 +244,8 @@ body {
         }
       }
     @include breakpoint(phone){
-      min-width: 900px;
       padding: 0 0 50px;
+      width: 700px;
       ul {
         padding: 20px;
       }
@@ -261,8 +263,10 @@ body {
 .libros {
   margin: 20px 20px;
   @include breakpoint(phone){
+    width: 660px;
     max-height: 730px;
     overflow: auto;
+    min-height: 200px;
   }
   @include breakpoint(tablet-lg){
     max-height: 850px;
@@ -278,21 +282,27 @@ body {
 }
 .single__container{
   background: var(--color-white2);
-  max-width: 500px;
+  width: 300px;
   margin: auto;
   padding: 30px;
+  @include breakpoint(phone){
+    width: 500px;
+  }
   p, h3 {
     max-width: 400px;
     margin-bottom: 10px;
     word-wrap: break-word;
   }
   img {
-    width: 290px;
-    height: 410px;
+    width: 100%;
+    height: 300px;
     margin-bottom: 20px;
   }
   .btns {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     .btn {
       margin-right: 10px;
       margin-top: 20px;;
@@ -301,42 +311,53 @@ body {
         background: var(--color-blue);
         text-decoration: none;
       }
-    }  
+    } 
+    @include breakpoint(phone) {
+        flex-direction: row;
+        justify-content: center;
+    }
   }
   .editorial {
     font-weight: bolder;
     color: var(--color-orange2);
   }
   @include breakpoint(phone) {
-    padding: 30px 55px;
     img {
-      width: 390px;
-      height: 510px;
+      width: 100%;
+      height: 500px;
     }  
   }
 }
 
 // CATEGORY
 .category {
-  text-align: center;
-  padding: 0 0 30px;
-  width: 90%;
-  ul li {
-    height: 40px;
-    a {
-      display: block;
+  padding-top: 30px;
+  .libros-container {
+    text-align: center;
+    padding: 0 0 30px;
+    width: 90%;
+    ul li {
+      height: 40px;
+      a {
+        display: block;
+      }
+    } 
+    .btn {
+      margin: 0 10px 0;
+      background: var(--color-gray);
+      &:hover {
+        background: var(--color-blue);
+        text-decoration: none;
+      }
     }
-  } 
-  .btn {
-    margin: 0 10px 0;
-    background: var(--color-gray);
-    &:hover {
-      background: var(--color-blue);
-      text-decoration: none;
-    }
-  }
-  @include breakpoint(phone){
-    width: 400px;
+    @include breakpoint(phone){
+      width: 700px;
+      ul li {
+        a {
+          line-height: 40px;
+        }
+      }
+    }  
   }
 }
 
@@ -359,6 +380,20 @@ body {
     }
   }
   @include breakpoint(phone) {
-    width: 400px;
+    width: 700px;
+  }
+}
+
+// FOOTER 
+.footer {
+  height: 100px;
+  text-align: center;
+  background: var(--color-black);
+  line-height: 100px;
+  p, a {
+    color: var(--color-white);
+  }
+  a {
+    text-decoration: underline;
   }
 }

@@ -1,4 +1,4 @@
-import Header from './Header';
+
 import { useState } from 'react';
 import { useParams, Link, useHistory } from 'react-router-dom';
 
@@ -14,10 +14,9 @@ const Books = (props) => {
     let params = useParams();
     const history = useHistory();
     return (
-        <div>
-            <Header libros={libros}/>
+        <div className="altura">
             <input className="header__buscador" type="search" placeholder="Buscar..." id="search" onKeyUp={buscador} />
-            <div className="altura books-container">
+            <div className="books-container">
                 <div className="libros-container books">
                     {params.autor ? <h3>Autor: {params.autor}</h3> : null}
                     {params.autor ? <>
